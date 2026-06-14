@@ -1,0 +1,545 @@
+@use "../abstracts" as abs;
+
+/* ========================= */
+/*       PAGE HOME – HEADER  */
+/* ========================= */
+.page-home {
+  header {
+    background-color: abs.$white;
+  }
+
+  .header-img {
+    width: 100%;
+    height: auto;
+    z-index: 0;
+    display: block;
+  }
+
+  header .container {
+    max-width: 23.4375rem; // 375px
+  }
+
+  .header-tittle {
+    font-family: abs.$title-font;
+    font-optical-sizing: auto;
+    text-transform: uppercase;
+    text-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.35);
+    font-size: 3.625rem;
+    font-weight: 900;
+    line-height: 3.4375rem;
+    padding: 0.4em 0.3em;
+  }
+
+  .header-subtittle {
+    font-family: abs.$p-font;
+    font-weight: 200;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-style: normal;
+    color: abs.$grey;
+    padding: 0.6rem 0.8125rem 1.6rem 0.9125rem;
+  }
+
+    .btn-header {
+    display: inline-grid;
+    grid-template-columns: auto 3.6rem; // ancho fijo del bloque de la flecha
+    align-items: stretch;
+    height: 4.0625rem;
+    background: abs.$black;
+    color: abs.$white;
+    font-family: abs.$title-font;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    width: fit-content;
+    padding: 0;
+    border: 0;
+    margin-left: 0.8125rem; // ajusta esta distancia para alinear bajo "inspire"
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+
+    span {
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    & > span:first-child {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 2rem;   // aquí controlas el ancho negro del texto
+      line-height: 1;
+      background: abs.$black;
+      font-size: 1.25rem;
+    }
+
+    & > span:last-child {
+      display: grid;
+      place-items: center;
+      background: abs.$orange;
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      display: block;
+      width: 1.5rem;
+      height: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    &:hover > span:first-child,
+    &:focus-visible > span:first-child,
+    &:active > span:first-child {
+      background: abs.$orange;
+      color: abs.$white;
+    }
+
+    &:hover > span:last-child,
+    &:focus-visible > span:last-child,
+    &:active > span:last-child {
+      background: abs.$black;
+    }
+  }
+}
+
+/* ========================= */
+/*  PAGE LOCATION – HEADER   */
+/* ========================= */
+.page-location {
+  .location-header {
+    position: relative;
+    min-height: 35.875rem;
+  }
+
+  .location-header figure {
+    margin: 0;
+    line-height: 0;
+    line-height: 0;
+  }
+
+  .location-header .map {
+    display: block;
+    min-height: 574px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .pointer {
+    position: absolute;
+    width: 4.37rem;
+    height: 5.9rem;
+    left: 52%;
+    top: 58.5%;
+    transform: translate(-50%, -100%);
+  }
+
+  .btn-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 3;
+    display: inline-grid;
+    grid-template-columns: 3.7rem auto; // bloque flecha + bloque texto
+    align-items: stretch;
+    min-height: 4.7rem; // puedes dejar 75px si lo prefieres
+    background: abs.$black;
+    color: abs.$white;
+    font-family: abs.$title-font;
+    font-weight: 800;
+    font-size: 1.3rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+    transition: background-color 0.2s ease,
+                color 0.2s ease,
+                transform 0.1s ease;
+  }
+
+  .btn-back .icon {
+    display: grid;
+    place-items: center;
+    background: abs.$orange;
+    width: 100%;
+    height: 100%;
+  }
+
+  .btn-back .icon img {
+    width: 1.4rem;
+    height: 1.4rem;
+    display: block;
+  }
+
+  .btn-back .label {
+    display: flex;
+    align-items: center;
+    padding: 0 2.2rem;
+    white-space: nowrap;
+    background: abs.$black;
+  }
+
+  .btn-back:hover .icon,
+  .btn-back:focus-visible .icon,
+  .btn-back:active .icon {
+    background: abs.$black;
+  }
+
+  .btn-back:hover .label,
+  .btn-back:focus-visible .label,
+  .btn-back:active .label {
+    background: abs.$orange;
+    color: abs.$white;
+  }
+
+  .btn-back:active {
+    transform: translateY(1px);
+  }
+}
+
+/* =================================== */
+/*           TABLET (≥ 48em)           */
+/* =================================== */
+@media (min-width: 48em) {
+  .page-home {
+    header {
+      display: grid;
+      grid-template-columns: 55% 45%;
+      align-items: stretch;
+      min-height: 43.75rem;
+      overflow-x: hidden;
+    }
+
+    .header-img {
+      grid-column: 1 / 2;
+      margin: 0;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .header-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 85%;
+      transform-origin: center;
+      display: block;
+    }
+
+    header .container {
+      grid-column: 2 / 3;
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 2.5rem;
+      min-width: 29.17rem;
+      background-color: transparent;
+      transform: translateX(-5rem);
+      z-index: 2;
+      padding-left: 2.5rem;
+    }
+
+    .header-tittle {
+      font-size: 4.375rem;
+      line-height: 1.1;
+      text-shadow: none;
+      font-weight: 900;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header-subtittle {
+      font-family: abs.$p-font;
+      font-size: 1.125rem;
+      max-width: 21.1875rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .btn-header {
+      margin: 0;
+      padding: 0;
+      width: 17.25rem;
+    }
+
+    .container-hero1 {
+      display: grid;
+      grid-template-columns: 50%;
+    }
+
+    .h2-hero1,
+    .p-hero1 {
+      display: grid;
+      grid-column: 1;
+    }
+
+    .hero-img1 {
+      display: grid;
+      grid-column: 2 / 3;
+    }
+  }
+
+  /* -------- PAGE LOCATION – TABLET -------- */
+  .page-location {
+    .location-header {
+      position: relative;
+    }
+
+    .location-header .map {
+      min-width: 18.88rem;
+      height: 37.5rem;
+      z-index: 0;
+      display: block;
+      margin: 0;
+      object-fit: cover;
+      object-position: center;
+      padding: 0;
+    }
+
+    .btn-back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      display: inline-grid;
+      grid-template-columns: 4.125rem auto;
+      align-items: stretch;
+      min-height: 4.5rem;
+      background: abs.$black;
+      color: abs.$white;
+      font-family: abs.$title-font;
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-left: 1.7rem;   
+      padding: 0;
+      border: 0;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+      transition: background-color 0.2s ease,
+                  color 0.2s ease,
+                  transform 0.1s ease;
+    }
+
+    .btn-back .icon {
+      display: grid;
+      place-items: center;
+      background: abs.$orange;
+      width: 100%;
+      height: 100%;
+    }
+
+    .btn-back .icon img {
+      display: block;
+      width: 1.4rem;
+      height: 1.5625rem;
+    }
+
+    .btn-back .label {
+      display: flex;
+      align-items: center;
+      padding: 0 1.7rem;
+      white-space: nowrap;
+      background: abs.$black;
+    }
+
+    .btn-back:hover .icon,
+    .btn-back:focus-visible .icon {
+      background: abs.$black;
+      color: abs.$white;
+    }
+
+    .btn-back:hover .label,
+    .btn-back:focus-visible .label {
+      background: abs.$orange;
+      color: abs.$white;
+    }
+
+    .pointer {
+      position: absolute;
+      left: 50%;
+      top: 58%;
+      transform: translate(-50%, -103%);
+      width: 4rem;
+      height: auto;
+      pointer-events: none;
+    }
+  }
+}
+
+/* =================================== */
+/*         DESKTOP (≥ 75em ≈ 1200px)   */
+/* =================================== */
+@media (min-width: 75em) {
+  .page-home {
+    header {
+      height: 50rem;
+      position: relative;
+      display: grid;
+      grid-template-columns: 32rem 38rem 1fr;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 32rem;
+      background-color: abs.$black;
+      z-index: 0;
+    }
+
+    .header-img {
+      grid-column: 2 / 3;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .header-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    header .container {
+      grid-column: 3 / 4;
+      align-self: center;
+      display: grid;
+      gap: 1.5rem;
+      justify-items: start;
+      position: static;
+      transform: none;
+      padding-left: 0;
+    }
+
+    .header-tittle {
+      position: absolute;
+      left: 3rem;
+      margin: 0;
+      padding: 0;
+      transform: translate(28%, -135%);
+      color: abs.$white;
+      font-family: abs.$title-font;
+      font-weight: 900;
+      line-height: 0.95;
+      font-size: 6.8rem;
+      text-shadow: none;
+      z-index: 1;
+      white-space: nowrap;
+    }
+
+    .header-subtittle {
+      position: absolute;
+      width: 35rem;
+      max-height: 15rem;
+      font-weight: 200;
+      font-size: 1.3rem;
+      line-height: 1.6;
+      margin: 0;
+      transform: translate(-18%, -165%);
+    }
+
+    .btn-header {
+      position: absolute;
+      width: 14.25rem;
+      grid-template-columns: 1fr 3rem;
+      margin: 0;
+      transform: translate(-28%, -25%);
+      white-space: nowrap;
+    }
+  }
+
+   /* Página location.html – ajustes desktop */
+  .page-location {
+    .location-header {
+      position: relative;
+      margin: 0;
+      padding: 0;
+    }
+
+    .location-header figure {
+      margin: 0;
+      padding: 0;
+      line-height: 0;
+    }
+
+    .location-header .map {
+      margin: 0;
+      padding: 0;
+      display: block;
+    }
+
+    .btn-back {
+      position: absolute;
+      top: 0;                 
+      left: 0;
+      margin-left: 9.6rem;    
+      z-index: 3;
+      display: inline-grid;
+      grid-template-columns: 4.125rem auto;
+      align-items: stretch;
+      height: 4.6875rem;     
+      background: abs.$black;
+      color: abs.$white;
+      font-family: abs.$title-font;
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 0;
+      border: 0;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+      transition: background-color 0.2s ease,
+                  color 0.2s ease,
+                  transform 0.1s ease;
+    }
+
+    .btn-back .icon {
+      display: grid;
+      place-items: center;
+      background: abs.$orange;
+      width: 100%;
+      height: 100%;
+    }
+
+    .btn-back .icon img {
+      display: block;
+      width: 1.4rem;
+      height: 1.4rem;
+    }
+
+    .btn-back .label {
+      display: flex;
+      align-items: center;
+      padding: 0 1.5rem;
+      white-space: nowrap;
+      background: abs.$black;
+    }
+
+    .btn-back:hover .icon,
+    .btn-back:focus-visible .icon {
+      background: abs.$black;
+    }
+
+    .btn-back:hover .label,
+    .btn-back:focus-visible .label {
+      background: abs.$orange;
+      color: abs.$white;
+    }
+}
+}
