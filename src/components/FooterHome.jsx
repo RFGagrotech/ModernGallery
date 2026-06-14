@@ -3,9 +3,9 @@ import logo from "../img/logo.svg";
 
 function Footer() {
     return (
-<footer class="footer-site">
-    <div class="footer-inner">
-      <a class="footer-logo" href="#" aria-label="Ir al inicio">
+<footer className="footer-site">
+    <div className="footer-inner">
+      <a className="footer-logo" href="#" aria-label="Ir al inicio">
         <img src= {logo}
         alt="Modern Art Gallery" />
       </a>
@@ -15,7 +15,7 @@ function Footer() {
         Find us at 99 King Street, Newport, USA.
       </address>
 
-      <nav className="footer-icons" aria-label="Social media">
+      <nav className="footer-social" aria-label="Social media">
         <a href="#" aria-label="Github">
           <FaGithub />
         </a>
